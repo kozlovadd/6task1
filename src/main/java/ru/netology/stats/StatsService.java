@@ -42,19 +42,22 @@ public class StatsService {
     //продажи ниже среднего
     public int salesBellowAverege(long[] sales) {
         int counter = 0;
+        long averageSale = average(sales);
         for (long sale : sales) {
-            if (sale < average(sales)) {
+            if (sale < averageSale) {
                 counter++;
             }
         }
-            return counter;
+        return counter;
 
     }
+
     //продажи выше среднего
     public int salesHigherAverege(long[] sales) {
         int counter = 0;
+        long averageSale = average(sales);
         for (long sale : sales) {
-            if (sale < average(sales)) {
+            if (sale > averageSale) {
                 counter++;
             }
         }
